@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+}
+
+body > header {
+  background-color: rgba(165, 42, 42, 0.589);
+  color: #fff;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+}
+
+body > header > span + span {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding-inline: 4em;
+  padding-block: 2em;
+}
+
+main > header {
+  border-bottom: 1px solid gray;
+}
+
+h2 + ul {
+  margin-top: -0.6em;
+  margin-bottom: 2em;
+}

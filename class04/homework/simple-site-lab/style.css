@@ -1,18 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: "Noto Serif", serif;
   background-color: #78cee9ff;
   color: #fff;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-img {
-  width: 100%;
 }
 
 h1,
@@ -20,56 +17,56 @@ nav {
   font-family: "Noto Sans", sans-serif;
 }
 
-.float-right {
+img {
   float: right;
-}
-
-.leon-logo {
   width: 30%;
   min-width: 105px;
   max-width: 190px;
 }
 
-.container {
-  margin: 2em;
+main {
+  margin: 2em auto;
   padding: 3em;
   max-width: 855px;
   border: 5px solid #00cb4aff;
 }
 
+/* Header */
 header {
   text-align: center;
-
-  & h3 {
-    font-size: 2em;
-    font-style: italic;
-    text-transform: capitalize;
-  }
 }
 
+header h3 {
+  font-size: 2em;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+header nav li:first-child a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Nav */
 nav {
   color: #7f8789ff;
+}
 
-  & li {
-    display: inline-block;
-  }
+nav li {
+  display: inline-block;
 }
 
 nav a {
   font-weight: bold;
   color: #00cb9dff;
   transition: color 200ms ease;
-
-  &:hover {
-    color: #fff;
-  }
-
-  &.active {
-    text-decoration: none;
-    color: #fff;
-  }
 }
 
+nav a:hover {
+  color: #fff;
+}
+
+/* Footer */
 footer {
   clear: both;
   text-align: center;
