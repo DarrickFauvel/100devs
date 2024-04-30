@@ -5,16 +5,16 @@
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -22,19 +22,100 @@
 /*******************************************/
 
 body {
-
+  font-family: Arial, Helvetica, sans-serif;
 }
-
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
-
+  background-color: #000;
+  font-size: 0.8rem;
 }
 
-footer {
+header a,
+header form {
+  padding-inline: 1.25em;
+  padding-block: 0.75em;
+}
 
+header > a,
+header ul {
+  float: left;
+}
+
+header form {
+  float: right;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+header li {
+  float: left;
+  list-style: none;
+  border-left: 1px solid gray;
+}
+
+header li:last-child {
+  border-right: 1px solid gray;
+}
+
+main > section {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+section h1,
+section span {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+section h1 + span {
+  color: gray;
+}
+
+section + section {
+  display: flex;
+  gap: 1em;
+}
+
+section > article {
+  width: 50%;
+}
+
+section > div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+div article {
+  width: 50%;
+}
+
+#news {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#news h2 {
+  margin: 0;
+  color: gray;
+}
+
+#news section {
+  display: flex;
+  gap: 1em;
 }
 
 /******************************************
