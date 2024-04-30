@@ -5,16 +5,16 @@
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -22,21 +22,120 @@
 /*******************************************/
 
 body {
-
+  display: flex;
+  gap: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1em;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
 
+main {
 }
 
 footer {
-
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+form {
+  margin-bottom: 1em;
+}
+
+form input {
+  border: none;
+}
+
+header a {
+  display: inline-block;
+  text-decoration: none;
+  color: #808080;
+  padding-block: 0.3em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main h1,
+main h3 {
+  margin: 0;
+}
+
+h1 + span,
+h3 + span,
+span + span {
+  font-size: 0.7rem;
+}
+
+/* Feature section */
+#feature {
+  display: flex;
+  gap: 1em;
+}
+
+#feature div {
+  width: 60%;
+}
+
+#feature ul {
+  width: 40%;
+}
+
+#feature li {
+  margin-bottom: 1em;
+}
+
+/* Latest section */
+#latest h2 {
+  font-size: 0.9em;
+  color: #808080;
+}
+
+#latest span {
+  display: block;
+}
+
+#latest h3 + span {
+  font-weight: bold;
+}
+
+#latest span + span {
+  color: #808080;
+}
+
+#latest ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+#latest li {
+  display: flex;
+
+  gap: 1em;
+}
+
+#latest div,
+#latest p,
+#latest img {
+  width: 33.3333%;
+}
