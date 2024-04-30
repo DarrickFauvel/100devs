@@ -23,9 +23,16 @@
 
 body {
   display: flex;
+  flex-direction: column;
   gap: 1em;
   font-family: Arial, Helvetica, sans-serif;
   padding: 1em;
+}
+
+@media (min-width: 800px) {
+  body {
+    flex-direction: row;
+  }
 }
 
 ul {
@@ -38,13 +45,45 @@ p {
   margin-top: 0;
 }
 
+.container {
+  display: flex;
+  margin-inline: auto;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+header .container {
+  position: relative;
+}
+
+@media (min-width: 800px) {
+  header .container {
+    position: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+header .menu svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2em;
+  height: 2em;
+}
+
+header nav {
+  position: absolute;
+  top: 0;
+  right: -100%;
+}
+
+@media (min-width: 800px) {
+  header nav {
+    position: unset;
+  }
 }
 
 main {
@@ -62,6 +101,7 @@ form {
 
 form input {
   border: none;
+  width: 100%;
 }
 
 header a {
@@ -89,15 +129,27 @@ span + span {
 /* Feature section */
 #feature {
   display: flex;
-  gap: 1em;
+  flex-direction: column;
+  gap: 2em;
 }
 
-#feature div {
-  width: 60%;
+@media (min-width: 800px) {
+  #feature {
+    flex-direction: row;
+    gap: 1em;
+  }
 }
 
-#feature ul {
-  width: 40%;
+@media (min-width: 800px) {
+  #feature div {
+    width: 60%;
+  }
+}
+
+@media (min-width: 800px) {
+  #feature ul {
+    width: 40%;
+  }
 }
 
 #feature li {
@@ -125,17 +177,32 @@ span + span {
 #latest ul {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 3em;
+}
+
+@media (min-width: 800px) {
+  #latest ul {
+    gap: 2em;
+  }
 }
 
 #latest li {
   display: flex;
-
-  gap: 1em;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
-#latest div,
-#latest p,
-#latest img {
-  width: 33.3333%;
+@media (min-width: 800px) {
+  #latest li {
+    flex-direction: row;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 800px) {
+  #latest div,
+  #latest p,
+  #latest img {
+    width: 33.3333%;
+  }
 }
