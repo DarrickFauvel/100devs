@@ -13,10 +13,25 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="clearfix">
+    <header>
       <a href="#">BBC</a>
-      <a href="#">Sign In</a>
+      <a class="menu" href="#">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1m0 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1m0 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </a>
       <nav>
+        <a href="#">Sign In</a>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">News</a></li>
@@ -28,8 +43,8 @@
           <li><a href="#">Culture</a></li>
           <li><a href="#">More</a></li>
         </ul>
+        <form><input type="text" placeholder="Search" /></form>
       </nav>
-      <form><input type="text" placeholder="Search" /></form>
     </header>
 
     <main>
@@ -38,8 +53,8 @@
         <span>Thursday, 13 August</span>
       </section>
 
-      <section id="features">
-        <article>
+      <section class="features">
+        <article class="primary">
           <h2>Israel and UAE strike historic peace deal</h2>
           <p>
             Israel and the UAE agree to normalise relations, marking the third
@@ -48,7 +63,7 @@
           <span>Middle East</span>
         </article>
 
-        <div>
+        <div class="secondary">
           <article>
             <h2>Americans, go home: Tension at Canada-US border</h2>
             <span>Canada</span>
@@ -68,7 +83,7 @@
         </div>
       </section>
 
-      <section id="news">
+      <section class="news">
         <h2>News</h2>
         <section>
           <article>

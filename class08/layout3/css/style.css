@@ -25,12 +25,57 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
   background-color: #000;
   font-size: 0.8rem;
+}
+
+header .menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (min-width: 1000px) {
+  header .menu {
+    display: none;
+  }
+}
+
+header .menu svg {
+  width: 2em;
+  height: 2em;
+}
+
+header nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: -200%;
+}
+
+@media (min-width: 1000px) {
+  header nav {
+    position: unset;
+    flex-direction: row;
+  }
 }
 
 header a,
@@ -39,14 +84,14 @@ header form {
   padding-block: 0.75em;
 }
 
-header > a,
+/* header > a,
 header ul {
   float: left;
 }
 
 header form {
   float: right;
-}
+} */
 
 header a {
   color: #fff;
@@ -57,8 +102,12 @@ header a:hover {
   text-decoration: underline;
 }
 
+header ul {
+  display: flex;
+}
+
 header li {
-  float: left;
+  /* float: left; */
   list-style: none;
   border-left: 1px solid gray;
 }
@@ -83,39 +132,96 @@ section h1 + span {
   color: gray;
 }
 
-section + section {
-  display: flex;
-  gap: 1em;
-}
-
-section > article {
-  width: 50%;
-}
-
-section > div {
-  display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-}
-
-div article {
-  width: 50%;
-}
-
-#news {
+/* Features section */
+.features {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
-#news h2 {
+@media (min-width: 800px) {
+  .features {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 800px) {
+  .features .primary {
+    width: 50%;
+  }
+}
+
+.features .primary h2 {
+  font-size: 1.7em;
+}
+
+.features .secondary h2 {
+  font-size: 1.2em;
+}
+
+.features article span {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@media (min-width: 800px) {
+  .secondary {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+}
+
+@media (min-width: 800px) {
+  .secondary article {
+    width: 45%;
+  }
+}
+
+/* News section */
+.news {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.news h2 {
   margin: 0;
   color: gray;
 }
 
-#news section {
+.news section {
   display: flex;
+  flex-direction: column;
   gap: 1em;
+}
+
+@media (min-width: 800px) {
+  .news section {
+    flex-direction: row;
+  }
+}
+
+.news article {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5em; */
+}
+
+.news article p {
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.news article span {
+  font-size: 0.8rem;
 }
 
 /******************************************
