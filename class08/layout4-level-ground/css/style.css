@@ -1,20 +1,33 @@
+html {
+  --color-name-slate-gray: #66768a;
+  --color-name-platinum: #dbdfe2;
+  --color-name-rich-black: #161f2a;
+  --color-name-charcoal: #454958;
+  --bg-color-primary: var(--color-name-slate-gray);
+  --bg-color-secondary: var(--color-name-platinum);
+  --bg-color-tertiary: var(--color-name-rich-black);
+  --text-color-primary: var(--color-name-rich-black);
+}
+
 /* Box Model Hack */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -22,21 +35,175 @@
 /*******************************************/
 
 body {
-
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-color-primary);
 }
 
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Saira Extra Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  text-transform: uppercase;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
 
-}
-
-footer {
-
+.footer {
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.header {
+  background-color: var(--bg-color-primary);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1em;
+}
+
+.header a {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header nav ul {
+  display: flex;
+  gap: 1em;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header .btn {
+  color: var(--bg-color-primary);
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+/* Hero section */
+.hero {
+  background-color: var(--bg-color-primary);
+  color: #fff;
+}
+
+.hero .container {
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
+  padding-block: 2em;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.hero p {
+  margin-top: 0;
+  max-width: 80ch;
+  font-size: 1.1rem;
+}
+
+.hero a {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--color-name-platinum);
+  margin: 0 auto;
+}
+
+.hero a svg {
+  width: 2em;
+  height: 2em;
+}
+
+.hero h1 ~ span {
+  display: inline-block;
+  color: var(--color-name-charcoal);
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-top: 3em;
+}
+
+/* Why section */
+.why .container {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-block: 3em;
+}
+
+.why h2 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.why p {
+  margin-top: 1em;
+  max-width: 55ch;
+}
+
+/* Cards section */
+.cards {
+  background-color: var(--bg-color-secondary);
+}
+
+.cards .container {
+  gap: 2em;
+  padding-block: 5em;
+}
+
+.cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+}
+
+.cards .card img {
+  width: 18.75em;
+  height: 10.625em;
+  background-color: var(--bg-color-primary);
+}
+
+.cards .card h3 {
+  font-size: 1.4em;
+}
+
+.cards .card .btn {
+  border: 1px solid var(--bg-color-primary);
+  color: var(--text-color-primary);
+  font-weight: bold;
+  font-family: "Saira Extra Condensed", sans-serif;
+  padding-inline: 3em;
+  padding-block: 1em;
+}
