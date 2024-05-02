@@ -45,6 +45,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 h1,
 h2,
 h3 {
@@ -54,6 +58,12 @@ h3 {
 
 p {
   line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -172,16 +182,16 @@ p {
 }
 
 /* Cards section */
-.cards {
+section.cards {
   background-color: var(--bg-color-secondary);
 }
 
-.cards .container {
+section.cards .container {
   gap: 2em;
   padding-block: 5em;
 }
 
-.cards .card {
+section.cards .card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -189,21 +199,95 @@ p {
   gap: 1em;
 }
 
-.cards .card img {
+section.cards .card img {
   width: 18.75em;
   height: 10.625em;
   background-color: var(--bg-color-primary);
 }
 
-.cards .card h3 {
+section.cards .card h3 {
   font-size: 1.4em;
 }
 
-.cards .card .btn {
+section.cards .card .btn {
   border: 1px solid var(--bg-color-primary);
   color: var(--text-color-primary);
   font-weight: bold;
   font-family: "Saira Extra Condensed", sans-serif;
   padding-inline: 3em;
   padding-block: 1em;
+}
+
+/* Volunteer section */
+.volunteer .container {
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  text-align: center;
+  margin-block: 3em;
+}
+
+.volunteer h2 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.volunteer p {
+  max-width: 55ch;
+}
+
+.volunteer .btn {
+  border: 1px solid var(--bg-color-primary);
+  color: var(--text-color-primary);
+  font-weight: bold;
+  font-family: "Saira Extra Condensed", sans-serif;
+  padding-inline: 3em;
+  padding-block: 1em;
+  margin-top: 1.25em;
+}
+
+/* Footer section */
+.footer {
+  background-color: var(--bg-color-tertiary);
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.footer .container {
+  flex-direction: column;
+  gap: 1.5em;
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
+
+.footer h4 {
+  text-transform: uppercase;
+}
+
+.footer a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.footer .cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .links h4 {
+  color: var(--bg-color-primary);
+  margin-top: 1em;
+}
+
+.footer .links .socials {
+  display: flex;
+}
+
+.footer .links ul {
+  display: flex;
+  gap: 2em;
+  margin-top: 0.25em;
+}
+
+.footer .address p {
 }
