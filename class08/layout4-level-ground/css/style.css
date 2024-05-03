@@ -187,8 +187,15 @@ section.cards {
 }
 
 section.cards .container {
-  gap: 2em;
+  flex-direction: column;
+  gap: 5em;
   padding-block: 5em;
+}
+
+@media (min-width: 576px) {
+  section.cards .container {
+    gap: 2em;
+  }
 }
 
 section.cards .card {
@@ -271,7 +278,17 @@ section.cards .card .btn {
 
 .footer .cards {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+}
+
+@media (min-width: 576px) {
+  .footer .cards {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: unset;
+  }
 }
 
 .footer .links h4 {
@@ -301,4 +318,14 @@ section.cards .card .btn {
 
 .footer hr + span {
   font-weight: bold;
+}
+
+.footer .address {
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .footer .address {
+    text-align: unset;
+  }
 }
