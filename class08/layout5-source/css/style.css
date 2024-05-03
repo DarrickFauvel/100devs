@@ -1,20 +1,33 @@
+html {
+  --color-name-charcoal: #2c4458;
+  --color-name-alice-blue: #e2eaf0;
+  --color-name-white: #fff;
+  --bg-color-primary: var(--color-name-alice-blue);
+  --bg-color-secondary: var(--color-name-alice-blue);
+  --bg-color-tertiary: var(--color-name-charcoal);
+  --text-color-primary: var(--color-name-charcoal);
+  --text-color-secondary: var(--color-name-white);
+}
+
 /* Box Model Hack */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -22,21 +35,108 @@
 /*******************************************/
 
 body {
-
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--text-color-primary);
 }
 
+a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  max-width: 796px;
+  margin: 0 auto;
+  padding-inline: 1em;
+}
+
+.btn {
+  background-color: var(--bg-color-tertiary);
+  color: var(--text-color-secondary);
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  text-decoration: none;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
-}
 
 footer {
-
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.header .container {
+  justify-content: center;
+  border-bottom: 1px solid var(--bg-color-primary);
+  padding-block: 1em;
+}
+
+@media (min-width: 576px) {
+  .header .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header .brand {
+  font-size: 1.75em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header .menu {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-35%);
+  font-size: 2rem;
+}
+
+@media (min-width: 576px) {
+  .header .menu {
+    display: none;
+  }
+}
+
+.header nav {
+  position: absolute;
+  top: 0;
+  left: -100%;
+}
+
+@media (min-width: 576px) {
+  .header nav {
+    position: unset;
+  }
+}
+
+@media (min-width: 576px) {
+  .header nav ul {
+    display: flex;
+    gap: 2em;
+  }
+}
+
+.header .btn {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .header .btn {
+    display: inline-block;
+    text-decoration: none;
+  }
+}
