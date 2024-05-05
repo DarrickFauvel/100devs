@@ -37,6 +37,7 @@ html {
 body {
   font-family: "Source Sans 3", sans-serif;
   color: var(--text-color-primary);
+  margin-bottom: 3em;
 }
 
 a {
@@ -225,4 +226,11 @@ footer {
       content: " >";
     }
   }
+}
+
+/* INFORMATION section */
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
