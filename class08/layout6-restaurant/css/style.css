@@ -1,12 +1,18 @@
 html {
   --color-name-dark-orange: 255, 136, 0;
+  --color-name-alice-blue: #e4ecef;
+  --color-name-white: #fff;
   --accent-color-primary: rgba(var(--color-name-dark-orange), 1);
   --accent-color-primary-lightened: rgba(var(--color-name-dark-orange), 0.8);
+  --bg-color-primary: var(--color-name-white);
+  --bg-color-secondary: var(--color-name-alice-blue);
 }
 
 /* Box Model Hack */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Clear fix hack */
@@ -35,6 +41,13 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Times New Roman", Times, serif;
+  text-transform: capitalize;
 }
 
 a {
@@ -83,6 +96,40 @@ input {
   }
 }
 
+.btn-link {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid var(--accent-color-primary); */
+  color: var(--color-name-white);
+  border-radius: 0.25em;
+  overflow: hidden;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  svg {
+    font-size: 0.85em;
+  }
+}
+
+.btn-link-primary {
+  background-color: var(--accent-color-primary);
+}
+
+.btn-link-primary-light {
+  background-color: var(--accent-color-primary-lightened);
+}
+
+.btn-left,
+.btn-right {
+  padding-inline: 1em;
+  padding-block: 1em;
+  border-radius: none;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -96,6 +143,7 @@ footer {
 /* ADDITIONAL STYLES
 /*******************************************/
 .header {
+  background-color: var(--bg-color-secondary);
   .container {
     justify-content: space-between;
   }
@@ -130,6 +178,10 @@ footer {
 }
 
 /* HERO section */
+.hero {
+  background-color: var(--bg-color-secondary);
+}
+
 .hero .container {
   display: flex;
   flex-direction: column;
@@ -153,4 +205,35 @@ footer {
       color: var(--accent-color-primary);
     }
   }
+}
+
+/* ABOUT section */
+.about {
+  background-color: var(--color-name-white);
+
+  .container {
+    padding-block: 2em;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+
+    @media (min-width: 796px) {
+      margin-left: 40%;
+    }
+  }
+
+  span {
+    color: var(--accent-color-primary);
+  }
+}
+
+/* ORDER section */
+.order.container {
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
