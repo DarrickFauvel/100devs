@@ -1,3 +1,9 @@
+html {
+  --color-name-dark-orange: 255, 136, 0;
+  --accent-color-primary: rgba(var(--color-name-dark-orange), 1);
+  --accent-color-primary-lightened: rgba(var(--color-name-dark-orange), 0.8);
+}
+
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -5,16 +11,16 @@
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -22,21 +28,129 @@
 /*******************************************/
 
 body {
-
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  max-width: 768px;
+  margin: 0 auto;
+  padding-inline: 1em;
+}
+
+button,
+input {
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  border-radius: 0.25em;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  border: 1px solid gray;
+}
+
+.btn {
+  border: none;
+  color: #fff;
+
+  &.btn-primary {
+    background-color: var(--accent-color-primary);
+    border: 1px solid var(--accent-color-primary);
+
+    &:hover {
+      background-color: var(--accent-color-primary-lightened);
+    }
+  }
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
-
 }
 
 footer {
-
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.header {
+  .container {
+    justify-content: space-between;
+  }
+
+  .menu-icon {
+    font-size: 2rem;
+
+    @media (min-width: 796px) {
+      display: none;
+    }
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
+    right: -100%;
+
+    @media (min-width: 796px) {
+      position: unset;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      @media (min-width: 796px) {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+/* HERO section */
+.hero .container {
+  display: flex;
+  flex-direction: column;
+
+  .socials {
+    ul {
+      display: flex;
+      gap: 2em;
+      margin-top: 1em;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.1em;
+      line-height: 1.7;
+    }
+
+    svg {
+      font-size: 1em;
+      color: var(--accent-color-primary);
+    }
+  }
+}
