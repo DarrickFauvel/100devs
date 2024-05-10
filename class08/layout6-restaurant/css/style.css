@@ -1,6 +1,7 @@
 html {
   --color-name-dark-orange: 255, 136, 0;
   --color-name-alice-blue: #e4ecef;
+  --color-name-anti-flash-white: #f2f6f7;
   --color-name-white: #fff;
   --accent-color-primary: rgba(var(--color-name-dark-orange), 1);
   --accent-color-primary-lightened: rgba(var(--color-name-dark-orange), 0.8);
@@ -150,8 +151,14 @@ footer {
 .header {
   background-color: var(--bg-color-secondary);
   padding-top: 1em;
+
   .container {
     justify-content: space-between;
+  }
+
+  .brand-logo {
+    font-size: 3rem;
+    stroke-width: 1.5px;
   }
 
   .menu-icon {
@@ -196,11 +203,12 @@ footer {
 /* HERO section */
 .hero {
   background-color: var(--bg-color-secondary);
-}
 
-.hero .container {
-  display: flex;
-  flex-direction: column;
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-block: 4em;
+  }
 
   .socials {
     ul {
@@ -226,10 +234,7 @@ footer {
 /* ABOUT section */
 .about {
   background-color: var(--color-name-white);
-
-  .container {
-    padding-block: 2em;
-  }
+  padding-block: 4em;
 
   .info {
     display: flex;
@@ -245,53 +250,160 @@ footer {
 
 /* ORDER section */
 .order {
+  background-color: var(--color-name-anti-flash-white);
+  padding-block: 4em;
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    z-index: 1;
+  }
+
+  .cuisines-list {
+    display: flex;
+
+    a {
+      padding-inline: 1.25em;
+      padding-block: 0.5em;
+      border-bottom: 1px solid lightgray;
+      transition: all 0.2s;
+
+      &:hover {
+        text-decoration: none;
+        color: var(--accent-color-primary-lightened);
+        border-bottom: 1px solid var(--accent-color-primary-lightened);
+      }
+
+      &.active {
+        color: var(--accent-color-primary);
+        border-bottom: 3px solid var(--accent-color-primary);
+      }
+    }
+  }
+
+  .cuisine-items-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 1.25em;
+
+    @media (min-width: 796px) {
+      gap: 2em;
+    }
+  }
+
+  .cuisine-item {
+    position: relative;
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &.item1 {
+        background-image: url(https://images.unsplash.com/photo-1598515213345-d710d121c709?q=80&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      }
+      &.item2 {
+        background-image: url(https://images.unsplash.com/photo-1598514982901-ae62764ae75e?q=80&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      }
+      &.item3 {
+        background-image: url(https://images.unsplash.com/photo-1598515213381-80d77efcdf32?q=80&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      }
+      &.item4 {
+        background-image: url(https://images.unsplash.com/photo-1555821768-54cd53df8983?q=80&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+      }
+
+      .pill {
+        position: absolute;
+        top: 0.25em;
+        right: 0.25em;
+        color: var(--color-name-white);
+        background-color: var(--accent-color-primary);
+        padding-inline: 0.75em;
+        padding-block: 0.2em;
+        border-radius: 1em;
+        font-size: 0.7rem;
+      }
+    }
+
+    .overlay {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--color-name-white);
+      padding-inline: 2em;
+      padding-block: 2em;
+      opacity: 0;
+
+      .price {
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+      }
+
+      .btn {
+        background-color: var(--accent-color-primary);
+        padding-inline: 0.8em;
+        padding-block: 0.5em;
+        font-size: 0.7rem;
+        border-radius: 0.25em;
+        margin-top: 1em;
+
+        &:hover {
+          background-color: var(--accent-color-primary-lightened);
+        }
+      }
+
+      .stars-list {
+        display: flex;
+        color: var(--accent-color-primary);
+
+        .star {
+          font-size: 0.9em;
+          margin-inline: -1.5px;
+        }
+      }
+    }
+
+    &:hover .background-image,
+    &.active .background-image {
+      filter: brightness(50%);
+    }
+    &:hover .overlay,
+    &.active .overlay {
+      opacity: 1;
+    }
+  }
+}
+
+/* HOURS section */
+.hours {
   .container {
     flex-direction: column;
     align-items: center;
     gap: 1em;
   }
 
-  .cuisines-list {
-    display: flex;
-    gap: 2em;
-  }
-
-  .cuisine-items-list {
-    display: flex;
-    gap: 2em;
-  }
-
-  .cuisine-item {
+  .cta {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 150px;
-    background-color: gray;
-    color: var(--color-name-white);
 
-    .price {
-      font-family: "Times New Roman", Times, serif;
-      font-weight: bold;
+    .cta-icon {
+      font-size: 2rem;
+      color: var(--accent-color-primary);
     }
 
-    .btn {
-      background-color: var(--accent-color-primary);
-      padding-inline: 0.8em;
-      padding-block: 0.5em;
-      font-size: 0.7rem;
-      border-radius: 0.25em;
-    }
-  }
-
-  .stars-list {
-    display: flex;
-    color: var(--accent-color-primary);
-
-    .star {
-      font-size: 0.9em;
-      margin-inline: -1.5px;
+    .cta-number {
+      color: var(--accent-color-primary);
     }
   }
 }
