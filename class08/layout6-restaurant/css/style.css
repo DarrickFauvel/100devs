@@ -307,6 +307,8 @@ footer {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      transition: filter 0.5s ease;
+      filter: brightness(100%);
 
       &.item1 {
         background-image: url(https://images.unsplash.com/photo-1598515213345-d710d121c709?q=80&w=640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
@@ -342,6 +344,7 @@ footer {
       color: var(--color-name-white);
       padding-inline: 2em;
       padding-block: 2em;
+      transition: opacity 0.5s ease;
       opacity: 0;
 
       .price {
@@ -356,6 +359,7 @@ footer {
         font-size: 0.7rem;
         border-radius: 0.25em;
         margin-top: 1em;
+        transition: background-color 0.3s ease;
 
         &:hover {
           background-color: var(--accent-color-primary-lightened);
@@ -396,14 +400,22 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5em;
 
     .cta-icon {
       font-size: 2rem;
       color: var(--accent-color-primary);
     }
 
+    .cta-action {
+      font-size: 0.8rem;
+    }
+
     .cta-number {
       color: var(--accent-color-primary);
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
   }
 }
