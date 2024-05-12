@@ -49,6 +49,14 @@ h2,
 h3 {
   font-family: "Times New Roman", Times, serif;
   text-transform: capitalize;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
 }
 
 a {
@@ -135,9 +143,23 @@ input {
   border-radius: none;
 }
 
+section > .container {
+  padding-block: 4em;
+}
+
 section > span,
 section > .container > span {
   color: var(--accent-color-primary);
+}
+
+.stars-list {
+  display: flex;
+  color: var(--accent-color-primary);
+
+  .star {
+    font-size: 0.9em;
+    margin-inline: -1.5px;
+  }
 }
 
 /******************************************
@@ -155,6 +177,7 @@ footer {
 .header {
   background-color: var(--bg-color-secondary);
   padding-top: 1em;
+  overflow: hidden;
 
   .container {
     justify-content: space-between;
@@ -211,7 +234,6 @@ footer {
   .container {
     display: flex;
     flex-direction: column;
-    padding-block: 4em;
   }
 
   .socials {
@@ -238,7 +260,6 @@ footer {
 /* ABOUT section */
 .about {
   background-color: var(--color-name-white);
-  padding-block: 4em;
 
   .info {
     display: flex;
@@ -255,7 +276,6 @@ footer {
 /* ORDER section */
 .order {
   background-color: var(--color-name-anti-flash-white);
-  padding-block: 4em;
 
   .container {
     flex-direction: column;
@@ -369,16 +389,6 @@ footer {
           background-color: var(--accent-color-primary-lightened);
         }
       }
-
-      .stars-list {
-        display: flex;
-        color: var(--accent-color-primary);
-
-        .star {
-          font-size: 0.9em;
-          margin-inline: -1.5px;
-        }
-      }
     }
 
     &:hover .background-image,
@@ -443,15 +453,51 @@ footer {
 
 /* TESTIMONIALS section */
 .testimonials {
+  background-color: var(--color-name-anti-flash-white);
+
   .container {
     flex-direction: column;
     align-items: center;
+    gap: 1em;
+  }
+
+  .customer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+
+    .customer-photo {
+      border-radius: 50%;
+      border: 1px solid lightgray;
+      width: 5em;
+    }
+
+    .customer-name {
+      font-weight: bold;
+      margin-bottom: -0.5em;
+    }
+
+    .customer-title {
+      color: gray;
+      font-size: 0.7rem;
+    }
+
+    .customer-comment {
+      text-align: center;
+      line-height: 1.5;
+      font-size: 0.8rem;
+      text-wrap: balance;
+      color: gray;
+      font-style: italic;
+    }
   }
 }
 
 /* DEVELOPER overides */
 .hero,
 .about,
-.order {
-  display: none;
+.order,
+.hours {
+  /* display: none; */
 }
