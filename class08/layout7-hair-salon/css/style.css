@@ -1,6 +1,16 @@
+:root {
+  --font-ephesis-regular: 400 1rem "Ephesis", cursive;
+  --font-cinzel-regular: 400 1rem "Cinzel", serif;
+  --font-brand: var(--font-ephesis-regular);
+  --font-display: var(--font-cinzel-regular);
+  --image-model-01: url(../images/averie-woodard-4nulm-JUYFo-unsplash.jpg);
+}
+
 /* Box Model Hack */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Clear fix hack */
@@ -24,15 +34,97 @@
 body {
 }
 
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
-header,
-main,
-footer {
-  display: flex;
-}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.header {
+  .container {
+    justify-content: space-between;
+    padding-block: 1em;
+    overflow: hidden;
+  }
+
+  a {
+    text-transform: uppercase;
+  }
+
+  .brand {
+    font: var(--font-brand);
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: none;
+    color: black;
+  }
+
+  .menu-icon {
+    font-size: 2rem;
+  }
+
+  .nav-menu {
+  }
+}
+
+/*** Main ***/
+/* Hero */
+.hero {
+  background-image: var(--image-model-01);
+  background-size: cover;
+  height: 300px;
+
+  .container {
+    flex-direction: column;
+  }
+
+  h1,
+  h2 {
+    font: var(--font-cinzel-regular);
+    color: white;
+  }
+
+  .head {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .subhead {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-top: 0.5em;
+  }
+}
