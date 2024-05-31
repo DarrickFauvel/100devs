@@ -7,9 +7,9 @@ const toggleMenu = () => {
   menuIcon.classList.toggle("visually-hidden")
 }
 
-document.addEventListener("click", (e) => {
-  const outsideClick = !navMenu.contains(e.target)
-  outsideClick && toggleMenu()
-})
+// document.addEventListener("click", (e) => {
+//   const outsideClick = !navMenu.contains(e.target)
+//   outsideClick && toggleMenu()
+// })
 
-menuIcon.addEventListener("click", toggleMenu)
+// menuIcon.addEventListener("click", toggleMenu)
