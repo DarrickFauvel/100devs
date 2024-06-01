@@ -1,9 +1,22 @@
 :root {
   --font-ephesis-regular: 400 1rem "Ephesis", cursive;
   --font-cinzel-regular: 400 1rem "Cinzel", serif;
+  --font-georgia: 400 1rem Georgia, "Times New Roman", Times, serif;
   --font-brand: var(--font-ephesis-regular);
   --font-display: var(--font-cinzel-regular);
+  --font-body: var(--font-georgia);
+
+  --color-name-black: #000;
+  --color-name-white: #fff;
+  --color-name-anti-flash-white: #f3f4f6;
+  --color-primary: var(--color-name-black);
+  --color-secondary: var(--color-name-white);
+  --color-accent: var(--color-name-black);
+  --color-neutral-01: var(--color-name-white);
+  --color-neutral-02: var(--color-name-anti-flash-white);
+
   --image-model-01: url(../images/averie-woodard-4nulm-JUYFo-unsplash.jpg);
+  --image-model-02: url(../images/clarke-sanders-HOQpBGL95Z8-unsplash.jpg);
 }
 
 /* Box Model Hack */
@@ -32,6 +45,19 @@
 /*******************************************/
 
 body {
+  font: var(--font-body);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 
 ul {
@@ -45,6 +71,7 @@ h4,
 h5,
 h6 {
   margin: 0;
+  font: var(--font-display);
 }
 
 .container {
@@ -54,16 +81,42 @@ h6 {
   width: 90%;
 }
 
-.visually-hidden:not(:focus):not(:active) {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
+.btn {
+  display: inline-block;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font: var(--font-display);
+  transition: 0.2s ease;
+
+  &.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &.btn-link {
+    display: flex;
+    gap: 0.6em;
+    padding-inline: 1em;
+    padding-block: 0.5em;
+
+    &::before {
+      content: "–";
+    }
+  }
 }
 
 /******************************************
@@ -89,7 +142,7 @@ h6 {
     font-size: 2rem;
     text-decoration: none;
     text-transform: none;
-    color: black;
+    color: var(--color-primary);
   }
 
   .menu-icon {
@@ -103,28 +156,146 @@ h6 {
 /*** Main ***/
 /* Hero */
 .hero {
-  background-image: var(--image-model-01);
-  background-size: cover;
-  height: 300px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-block: 2em;
+
+  .bg-image {
+    position: absolute;
+    inset: 0;
+    background-image: var(--image-model-01);
+    background-size: 300%;
+    background-position: 30% center;
+  }
 
   .container {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
   }
 
   h1,
   h2 {
     font: var(--font-cinzel-regular);
-    color: white;
+    color: var(--color-secondary);
   }
 
-  .head {
+  .hero-head {
     font-size: 3rem;
     line-height: 1.1;
   }
 
-  .subhead {
+  .hero-subhead {
     font-size: 0.9rem;
     letter-spacing: 1px;
-    margin-top: 0.5em;
+    margin-top: -0.5em;
   }
+
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    width: 15em;
+    padding-inline: 1em;
+    padding-block: 1.5em;
+
+    .cta-head {
+      display: inline-block;
+      font-weight: 400;
+      border-left: 3px solid white;
+      margin-left: -0.85em;
+      margin-bottom: -0.75em;
+      padding-left: 0.75em;
+      padding-block: 0.5em;
+    }
+
+    span {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* Feature cards */
+.features {
+  .container {
+    flex-direction: column;
+    gap: 2em;
+    padding-block: 2em;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: -0.2em;
+    }
+    .card-heading {
+      font-weight: 600;
+    }
+    .card-text {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      width: 35ch;
+      text-align: center;
+    }
+  }
+}
+
+/* Momentum */
+.momentum {
+  .container {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    /* width: 50%; */
+
+    .info-heading {
+      font-size: 2rem;
+      text-wrap: balance;
+    }
+    .info-text {
+      line-height: 1.5;
+    }
+  }
+
+  .video {
+    position: relative;
+    /* width: 50%; */
+    height: 300px;
+
+    .video-image {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: var(--image-model-02);
+      background-position: center;
+      background-size: cover;
+    }
+    .video-play {
+      font-size: 3rem;
+      color: var(--color-neutral-01);
+    }
+  }
+}
+
+/* developer options */
+.hero,
+.features {
+  display: none;
 }
