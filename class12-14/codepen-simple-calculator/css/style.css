@@ -1,0 +1,40 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+#controls {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 4px solid black;
+  background-color: black;
+  width: 8em;
+
+  & > div {
+    background-color: white;
+    text-align: center;
+    padding: 1em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lightgray;
+    }
+  }
+}
