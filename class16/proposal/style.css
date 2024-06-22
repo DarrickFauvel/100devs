@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+  padding-inline: 4em;
+  padding-block: 4em;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.gap-6 {
+  gap: 1.5em;
+}
+
+.outline {
+  outline: 1px solid blue;
+}
+
+.placeholder {
+  display: inline-block;
+  background-color: lightcyan;
+  font-style: normal;
+  color: rgb(45, 45, 180);
+  padding-inline: 0.25em;
+  outline: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+/* Cover page */
+#cover {
+  background-image: url("./background.jpg");
+  background-size: cover;
+  background-position: 300px center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-weight: bold;
+
+  & h1 {
+    font-size: 2rem;
+    padding-top: 10em;
+    padding-bottom: 5em;
+  }
+}
+
+/* About page */
+#about {
+  height: 100vh;
+}
