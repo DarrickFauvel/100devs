@@ -50,17 +50,22 @@ function min(a, b) {
 
 // FUNCTION BASICS TASK 4 of 4
 // TITLE: Function pow(x, n)
-const inputX = document.querySelector("#input-x")
-const inputN = document.querySelector("#input-n")
-const button = document.querySelector("#button")
-const resultDisplay = document.querySelector("#result")
+function functionBasicsTask4of4() {
+  const inputX = prompt("x?")
+  const inputN = prompt("n?")
 
-function pow(x, n) {
-  let result = 1
-  for (let i = 0; i < n; i++) {
-    result *= x
+  function pow(x, n) {
+    let result = 1
+    for (let i = 0; i < n; i++) {
+      result *= x
+    }
+    if (!x > 0) {
+      alert(`Power ${n} is not supported, use a positive integer`)
+    } else {
+      alert(result)
+    }
   }
-  resultDisplay.innerText = result
-}
 
-button.addEventListener("click", () => pow(+inputX.value, +inputN.value))
+  pow(+inputX, +inputN)
+}
+functionBasicsTask4of4()
