@@ -1,0 +1,46 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  background-color: lightslategray;
+}
+
+header,
+main {
+  text-align: center;
+}
+
+img {
+  width: 50%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+#remote {
+  border: 2px solid black;
+  width: 50%;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    cursor: pointer;
+  }
+}
