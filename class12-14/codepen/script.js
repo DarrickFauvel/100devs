@@ -69,3 +69,33 @@ function functionBasicsTask4of4() {
   pow(+inputX, +inputN)
 }
 // functionBasicsTask4of4()
+
+// -------------------------
+// FUNCTION EXPRESSION TASKS
+// -------------------------
+
+// No function expression tasks
+
+// ---------------------------
+// ARROW FUNCTION BASICS TASKS
+// ---------------------------
+
+// ARROW FUNCTION BASICS TASK 1 of 1
+// TITLE: Rewrite with arrow functions
+function arrowFunctionBasicsTask1of1() {
+  const ask = (question, yes, no) => {
+    if (confirm(question)) yes()
+    else no()
+  }
+
+  ask(
+    "Do you agree?",
+    () => {
+      alert("You agreed.")
+    },
+    () => {
+      alert("You canceled the execution.")
+    }
+  )
+}
+arrowFunctionBasicsTask1of1()
