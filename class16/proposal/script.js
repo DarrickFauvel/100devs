@@ -4,7 +4,9 @@ const placeholders = {
   "Sender.LastName": "Fauvel",
   "Sender.Company": "Darrick Develops",
   "Sent.Date": new Date().toLocaleDateString(),
-  "Client.FirstName": "Client Name",
+  "Client.Company": "Client Company",
+  "Client.FirstName": "Client First Name",
+  "Client.LastName": "Client Last Name",
 }
 
 function replaceText(pattern, replacement) {
